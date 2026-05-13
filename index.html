@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>The Ancient Chronicles of Bowling Poker</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Crimson+Pro:ital,wght@0,400;0,700;1,400&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --parchment: #f4e4bc;
+                --ink: #2c1e16;
+                --seal-red: #8b0000;
+            }
+
+            body {
+                font-family: 'Crimson Pro', serif;
+                background-color: #1a120b;
+                background-image: url('https://www.transparenttextures.com/patterns/dark-leather.png');
+                margin: 0;
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+            }
+
+            .scroll-container {
+                background-color: var(--parchment);
+                background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+                max-width: 800px;
+                width: 100%;
+                padding: 60px 50px;
+                box-shadow: 0 0 20px rgba(0,0,0,0.5), inset 0 0 100px rgba(139, 69, 19, 0.2);
+                position: relative;
+                border-left: 15px solid #3d2b1f;
+                border-right: 15px solid #3
+                border-right: 15px solid #3d2b1f;
+                border-radius: 5px;
+            }
+
+            /* Scroll Rollers */
+            .scroll-container::before {
+                content: "";
+                position: absolute;
+                top: -20px;
+                left: -25px;
+                right: -25px;
+                height: 40px;
+                background: linear-gradient(to bottom, #2c1e16, #4e3629, #2c1e16);
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+                z-index: 10;
+            }
+
+            .scroll-container::after {
+                content: "";
+                position: absolute;
+                bottom: -20px;
+                left: -25px;
+                right: -25px;
+                height: 40px;
+                background: linear-gradient(to top, #2c1e16, #4e3629, #2c1e16);
+                border-radius: 10px;
+                box-shadow: 0 -5px 15px rgba(0,0,0,0.6);
+                z-index: 10;
+            }
+
+            h1, h2, h3 {
+                font-family: 'Cinzel', serif;
+                color: var(--ink);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+
+            h1 {
+                font-size: 3rem;
+                text-align: center;
+                border-bottom: 2px solid var(--ink);
+                margin-bottom: 2rem;
+                padding-bottom: 1rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+                margin-top: 2.5rem;
+                margin-bottom: 1rem;
+                display: flex;
+                align-items: center;
+            }
+
+            h2::before {
+                content: "📜";
+                margin-right: 10px;
+                font-size: 1.5rem;
+            }
+
+            p, li {
+                font-size: 1.25rem;
+                line-height: 1.6;
+                color: #3d2b14;
+            }
+
+            .rule-section {
+                margin-bottom: 2.5rem;
+                border-bottom: 1px solid rgba(44, 30, 22, 0.1);
+                padding-bottom: 1.5rem;
+            }
+
+            .rule-section:last-child {
+                border-bottom: none;
+            }
+
+            .highlight-box {
+                background: rgba(139, 0, 0, 0.05);
+                border: 2px solid var(--seal-red);
+                padding: 1.5rem;
+                margin: 1.5rem 0;
+                border-radius: 2px;
+                position: relative;
+            }
+
+            .highlight-box::after {
+                content: "✵";
+                position: absolute;
+                top: -15px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: var(--parchment);
+                padding: 0 10px;
+                color: var(--seal-red);
+                font-size: 1.5rem;
+            }
+
+            .hand-rank-list {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            .hand-rank-item {
+                display: flex;
+                justify-content: space-between;
+                padding: 0.5rem 0;
+                border-bottom: 1px dotted rgba(44, 30, 22, 0.3);
+            }
+
+            .rank-number {
+                font-weight: bold;
+                font-family: 'Cinzel', serif;
+                margin-right: 1rem;
+            }
+
+            .seal {
+                width: 100px;
+                height: 100px;
+                background: var
+                background: var(--seal-red);
+                border-radius: 50%;
+                margin: 3rem auto 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--parchment);
+                font-family: 'Cinzel', serif;
+                font-weight: bold;
+                text-align: center;
+                font-size: 0.7rem;
+                box-shadow: inset 0 0 10px rgba(0,0,0,0.5), 0 5px 15px rgba(0,0,0,0.3);
+                transform: rotate(-10deg);
+                opacity: 0.8;
+                border: 2px solid #5e0000;
+            }
+
+            @media (max-width: 640px) {
+                .scroll-container {
+                    padding: 40px 25px;
+                    border-left-width: 10px;
+                    border-right-width: 10px;
+                }
+                h1 { font-size: 2rem; }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="scroll-container">
+            <header>
+                <h1 class="text-center">Bowling Poker</h1>
+                <p
+                    style="
+                        text-align: center;
+                        font-style: italic;
+                        font-size: 1.1rem;
+                    "
+                >
+                    The Sacred Chronicles of the Lanes
+                </p>
+            </header>
+
+            <main>
+                <section class="rule-section">
+                    <h2 class="text-center">The Setup</h2>
+                    <p>
+                        Two decks, infused with the presence of Jokers, are
+                        bound together at the start of every trial. Each
+                        participant contributes one silver coin ($1) to the
+                        shared treasury. The player holding the cards acts as
+                        the <strong class="text-red-900">Pot Custodian</strong>,
+                        guarding the treasury for the group.
+                    </p>
+                </section>
+
+                <section class="rule-section">
+                    <h2 class="text-center">The Trials of Skill</h2>
+                    <p>As the pins fall, cards are earned through prowess:</p>
+                    <ul class="list-none pl-4 space-y-2">
+                        <li class="text-red-900">
+                            • <strong class="text-black">A Strike:</strong> 1
+                            Card
+                        </li>
+                        <li class="text-red-900">
+                            •
+                            <strong class="text-black"
+                                >A Consecutive Strike:</strong
+                            >
+                            2 Cards
+                        </li>
+                        <li class="text-red-900">
+                            • <strong class="text-black">A Spare:</strong> 1
+                            Card
+                        </li>
+                        <li class="text-red-900">
+                            •
+                            <strong class="text-black"
+                                >The Split-to-Spare:</strong
+                            >
+                            2 Cards
+                        </li>
+                    </ul>
+                    <div class="mt-6 pt-4 border-t border-black/10">
+                        <h3 class="text-sm uppercase tracking-widest mb-2">
+                            The Unaligned Observers
+                        </h3>
+                        <p class="text-sm italic">
+                            Up to two non-bowlers may join the fray. By
+                            selecting from the Ace, 2, 3, or 4, they adopt the
+                            destiny and card-drawing path of the bowler assigned
+                            to their chosen mark.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="rule-section">
+                    <h2 class="text-center">The Arcane Wild</h2>
+                    <div class="highlight-box">
+                        <p>
+                            Upon the final bowler's turn, the deck is cut. The
+                            revealed card becomes the
+                            <strong class="text-red-800"
+                                >Universal True Wild</strong
+                            >. It possesses the power to mimic any rank or any
+                            suit to complete a hand.
+                        </p>
+                        <p class="mt-4 font-bold text-red-800">
+                            The Law of Purity (Natural Rule):
+                        </p>
+                        <p>
+                            A hand of pure essence (no Wilds or Jokers) shall
+                            always triumph over an identical hand that is
+                            touched by the Wild or the Joker.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="rule-section">
+                    <h2 class="text-center">Victory & Destiny</h2>
+                    <p>
+                        To claim the treasury, one must possess both the
+                        <strong class="text-red-900">Superior Hand</strong> and
+                        a
+                        <strong class="text-red-900">Greater Score</strong> than
+                        their opponents. However, during the
+                        <strong class="text-red-900">Season Finale</strong>, the
+                        requirement of the score is lifted; only the hand
+                        matters.
+                    </p>
+                </section>
+
+                <section class="rule-section">
+                    <h2 class="text-center">The Hierarchy of Hands</h2>
+                    <div class="hand-rank-list">
+                        <div class="hand-rank-item">
+                            <span class="rank-number">I.</span>
+                            <span>Royal Flush</span>
+                            <span class="italic text-xs">(The Unbeatable)</span>
+                        </div>
+                        <div class="hand-rank-item">
+                            <span class="rank-number">II.</span>
+                            <span>Five of a Kind</span>
+                        </div>
+                        <div class="hand-rank-item">
+                            <span class="rank-number">III.</span>
+                            <span>Straight Flush</span>
+                        </div>
+                        <div class="hand-rank-item">
+                            <span class="rank-number">IV.</span>
+                            <span>Four of a Kind</span>
+                        </div>
+                        <div class="hand-rank-item">
+                            <span class="rank-number">V.</span>
+                            <span>Full House</span>
+                        </div>
+                        <div class="hand-rank-item">
+                            <span class="rank-number">VI.</span>
+                            <span>Flush</span>
+                        </div>
+                        <div class="hand-rank-item">
+                            <span class="rank-number">VII.</span>
+                            <span>Straight</span>
+                        </div>
+                        <div class="hand-rank-item">
+                            <span class="rank-number">VIII.</span>
+                            <span>Three of a Kind</span>
+                        </div>
+                        <div class="hand-rank-item">
+                            <span class="rank-number">IX.</span>
+                            <span>Two Pair</span>
+                        </div>
+                        <div class="hand-rank-item">
+                            <span class="rank-number">X.</span>
+                            <span>One Pair</span>
+                        </div>
+                        <div class="hand-rank-item">
+                            <span class="rank-number">XI.</span>
+                            <span>High Card</span>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <div class="seal">SEAL OF THE<br />LEAGUE</div>
+
+            <footer class="text-center mt-8 text-xs opacity-50 pb-10">
+                &copy; Written in the Era of the Pins
+            </footer>
+        </div>
+    </body>
+</html>
